@@ -1,0 +1,49 @@
+:root {
+  /* set colors thru pywal somehow */
+  --color-tile: #A7D7ED; /* color6 */
+  --color-fg: #E6E8E7; /* color7/foreground */
+  --color-bg: #497CC1; /* color1 */
+
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  /* move elsewhere */
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  display: flex;
+  width: 30vw;
+  justify-content: space-between;
+}
+
+a, a:link {
+  border: solid var(--color-fg) 0.4rem;
+  color: var(--color-fg);
+  text-decoration: none;
+  text-align: center;
+  width: 5vw;
+  height: 10vh;
+
+  transition: background-color 0.4s ease-in, color 0.4s ease-in;
+
+  display: inline-block;
+}
+
+a:active, a:hover, a:focus {
+  background-color: var(--color-fg);
+  color: var(--color-bg)
+}
