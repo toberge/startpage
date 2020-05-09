@@ -1,66 +1,88 @@
 :root {
   /* set colors thru pywal somehow */
-  --color-alt: #A7D7ED; /* color6 */
-  --color-fg: #E6E8E7; /* color7/foreground */
-  --color-bg: #497CC1; /* color1 */
+  --foreground: #abb2bf; /* color15/foreground */
+  --background: #282c34; /* color0/background */
+  --inset: #545862;
+  --accent: #61afef; /* color12 or who knows? */
+  --extra2: #98c379; /* color10 */
+  --extra1: #c678dd; /* color13 */
 
   font-family: Ubuntu, sans-serif;
   font-weight: bold;
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-fg);
+  background: var(--background);
+  color: var(--foreground);
+  margin: 0;
 }
 
 header {
   text-align: center;
+  margin-bottom: 5vh;
 }
 
 h1 {
   text-decoration: underline;
+  color: var(--foreground);
   text-underline-offset: 0.8rem;
 }
 
 main {
   margin: 0 auto;
-  width: 50vw;
-  /*height: 50vh;*/
-
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  /*grid-template-rows: 1fr 1fr 1fr;*/
-  grid-column-gap: 2vw;
-  grid-row-gap: 2vh;
 }
 
+/* containers for links */
+section {
+  background: var(--inset);
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 2em 2em 0 2em;
+  border-left: 2em solid var(--accent);
+  display: block;
+}
+
+#school, #science {
+  border-left-color: var(--extra1);
+}
+
+#news {
+  border-left-color: var(--extra2);
+}
+
+/* link size, transition, color */
 a, a:link {
-  /*border: solid var(--color-fg) 0.4rem;*/
-  padding: 0.8rem;
-  border-radius: 50%;
-  color: var(--color-fg);
+  color: var(--foreground);
+  font-size: 1.3em;
   text-decoration: none;
-  text-align: center;
 
-  width: 100%;
-  height: 100%;
+  transition: color 0.2s linear, color 0.2s linear;
+
+  padding: 1em;
   display: inline-block;
-  box-sizing: border-box;
-  line-height: 1.8rem; /* spacing in rel. to fa-icons */
-
-  transition: background-color 0.2s linear, color 0.2s linear;
-
 }
 
 a:active, a:hover, a:focus {
-  background-color: var(--color-fg);
-  color: var(--color-bg);
-  outline: none;
+  /* background-color: var(--background); */
+  color: var(--accent);
 }
 
-@media screen and (max-aspect-ratio: 3/4) {
+/* @media rules for width only */
+/* (this is desktop-only, soooorry) */
+@media screen and (min-width: 1400px) {
   main {
-    /* weak attempt at mobile support but whatever */
-    width: 96vw !important;
+    width: 50vw;
+  }
+}
+
+@media screen and (min-width: 966px) and (max-width: 1399px) {
+  main {
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width: 965px) {
+  main {
+    width: 96vw;
   }
 }
