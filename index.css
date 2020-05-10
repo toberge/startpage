@@ -42,7 +42,7 @@ section {
   display: block;
 }
 
-#school, #science {
+#school, #tools {
   border-left-color: var(--extra1);
 }
 
